@@ -681,7 +681,7 @@ class BookController(
 
     @GetMapping("/books")
     fun findBooksByName(
-            @RequestParam(required = false) name: String
+            @RequestParam(required = false) name: String?
     ): List<SimpleBookView> =
         bookRepository.findBooksByName(
             name,
